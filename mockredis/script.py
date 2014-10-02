@@ -70,8 +70,9 @@ class Script(object):
             - debug lib.
             - cmsgpack lib.
         """
-        import ctypes
-        ctypes.CDLL('liblua5.2.so', mode=ctypes.RTLD_GLOBAL)
+        # TODO: Make this not disable scripting test on osx.
+        # import ctypes
+        # ctypes.CDLL('liblua5.2.so', mode=ctypes.RTLD_GLOBAL)
 
         try:
             lua_globals.cjson = lua.eval('require "cjson"')
